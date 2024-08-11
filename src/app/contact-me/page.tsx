@@ -11,7 +11,7 @@ export default function ContactMe() {
         {Object.keys(contacts).map((key) => (
           <p key={key} className="text-lg leading-8 text-gray-600 text-justify">
             <span className="capitalize">{key}: </span>
-            <span>{contacts[key]}</span>
+            <span>{contacts[key as keyof typeof contacts]}</span>
           </p>
         ))}
         <div className="mt-10 flex items-center justify-center gap-x-6">
