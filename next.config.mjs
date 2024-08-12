@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/home",
+  basePath: "https://aunnearzadon.github.io/home",
   output: "export",  // <=== enables static exports
   reactStrictMode: true,
 };
