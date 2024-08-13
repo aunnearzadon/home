@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Timeline, workExperience } from "@/components/timeline";
-import { ScrollToTopButton } from "@/components/scrollToTop"
 
 export default function WorkExperience() {
   const [currentTab, setCurrentTab] = useState('softwareDevelopment')
@@ -40,7 +39,6 @@ export default function WorkExperience() {
           <a href="/home/contact-me" className="text-sm font-semibold leading-6 text-gray-900">Contact me <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <ScrollToTopButton />
     </div>
   )
 }
