@@ -1,5 +1,12 @@
 import React from 'react';
 
+const scrollToTarget = (targetId: string) => {
+  const targetElement = document.getElementById(targetId);
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export const Timeline: React.FC<{ timeline: any[] }> = ({ timeline }) => (
   <div className="relative flex justify-between items-center w-full my-8 px-4">
     <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-300"></div>
@@ -21,7 +28,10 @@ const TimelineNode: React.FC<{ dateStart: string; company: string }> = ({ dateSt
   <div className="flex flex-col items-center relative">
     <span className="mt-2 text-sm font-medium">{dateStart}</span>
     <div className={`w-4 h-4 rounded-full bg-indigo-600 z-10`}></div>
-    <a className='mb-2 text-sm font-medium text-gray-600' href={`#${company}`}>{company}</a>
+    <a className='mb-2 text-sm font-medium text-gray-600' href={`#${company}`} onClick={(e) => {
+      e.preventDefault();
+      scrollToTarget(company);
+    }}>{company}</a>
   </div>
 );
 
